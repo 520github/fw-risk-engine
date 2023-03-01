@@ -1,4 +1,4 @@
-package org.sunso.risk.data;
+package org.sunso.risk.data.source;
 
 public interface DataSourceRoute {
 
