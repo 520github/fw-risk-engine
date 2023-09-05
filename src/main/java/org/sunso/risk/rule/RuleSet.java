@@ -8,6 +8,19 @@ import java.util.List;
 public interface RuleSet {
 
     /**
+     * 设置规则集名称
+     * @param ruleSetName
+     * @return
+     */
+    RuleSet setRuleSetName(String ruleSetName);
+
+    /**
+     * 获取规则集名称
+     * @return
+     */
+    String getRuleSetName();
+
+    /**
      * 设置规则列表
      * @param ruleList
      * @return

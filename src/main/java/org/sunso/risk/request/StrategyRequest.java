@@ -1,10 +1,16 @@
 package org.sunso.risk.request;
 
 import org.sunso.risk.context.Context;
+import org.sunso.risk.context.DefaultContext;
 import org.sunso.risk.data.indicator.DataIndicatorRoute;
 import org.sunso.risk.dispatcher.Dispatcher;
+import org.sunso.risk.dispatcher.SimpleSequenceDispatcher;
+import org.sunso.risk.expression.factory.DefaultExpressionFactory;
 import org.sunso.risk.expression.factory.ExpressionFactory;
+import org.sunso.risk.relation.factory.DefaultRelationFactory;
 import org.sunso.risk.relation.factory.RelationFactory;
+import org.sunso.risk.rule.handler.DefaultRuleHandler;
+import org.sunso.risk.rule.handler.DefaultRuleHitHandler;
 import org.sunso.risk.rule.handler.RuleHandler;
 import org.sunso.risk.rule.handler.RuleHitHandler;
 import org.sunso.risk.strategy.Strategy;
@@ -27,27 +33,27 @@ public class StrategyRequest<C extends Context> {
     /**
      * 规则集执行分发器
      */
-    private Dispatcher dispatcher;
+    private Dispatcher dispatcher = SimpleSequenceDispatcher.create();
 
     /**
      * 规则条件表达式工厂
      */
-    private ExpressionFactory expressionFactory;
+    private ExpressionFactory expressionFactory = DefaultExpressionFactory.create();
 
     /**
      * 规则条件关系工厂
      */
-    private RelationFactory relationFactory;
+    private RelationFactory relationFactory = DefaultRelationFactory.create();
 
     /**
      * 规则处理器
      */
-    private RuleHandler ruleHandler;
+    private RuleHandler ruleHandler = DefaultRuleHandler.create();
 
     /**
      * 规则命中处理器
      */
-    private RuleHitHandler ruleHitHandler;
+    private RuleHitHandler ruleHitHandler = DefaultRuleHitHandler.create();
 
     /**
      * 数据指标路由

@@ -4,7 +4,7 @@ package org.sunso.risk.expression;
  * 包含表达式
  */
 public class ContainsExpression implements Expression {
-    private String expressionName;
+    private String expressionName ;
 
     @Override
     public Expression setExpressionName(String expressionName) {

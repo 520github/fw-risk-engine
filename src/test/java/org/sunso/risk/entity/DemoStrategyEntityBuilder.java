@@ -1,7 +1,5 @@
 package org.sunso.risk.entity;
 
-import com.sun.imageio.plugins.jpeg.JPEGImageReaderResources;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +10,10 @@ public class DemoStrategyEntityBuilder {
         return new DemoStrategyEntityBuilder();
     }
 
+    /**
+     * 定义风控策略
+     * @return
+     */
     public DemoStrategyEntity newDemoStrategyEntity() {
         DemoStrategyEntity strategyEntity = new DemoStrategyEntity();
         strategyEntity.setStrategyKey("test");
@@ -19,6 +21,10 @@ public class DemoStrategyEntityBuilder {
         return strategyEntity;
     }
 
+    /**
+     * 定义规则集
+     * @return
+     */
     private DemoRuleSetEntity newDemoRuleSetEntityTwo() {
         DemoRuleSetEntity ruleSetEntity = new DemoRuleSetEntity();
         ruleSetEntity.setRuleSetKey(getRuleSetTwo());
@@ -26,6 +32,10 @@ public class DemoStrategyEntityBuilder {
         return ruleSetEntity;
     }
 
+    /**
+     * 定义规则集
+     * @return
+     */
     private DemoRuleSetEntity newDemoRuleSetEntityOne() {
         DemoRuleSetEntity ruleSetEntity = new DemoRuleSetEntity();
         ruleSetEntity.setRuleSetKey(getRuleSetOne());

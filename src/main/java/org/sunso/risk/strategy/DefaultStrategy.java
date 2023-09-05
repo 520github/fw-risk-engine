@@ -9,10 +9,23 @@ import java.util.List;
  */
 public class DefaultStrategy implements Strategy {
 
+    private String strategyName;
+
     private List<RuleSet> ruleSetList;
 
     public static DefaultStrategy create() {
         return new DefaultStrategy();
+    }
+
+    @Override
+    public Strategy setStrategyName(String strategyName) {
+        this.strategyName = strategyName;
+        return this;
+    }
+
+    @Override
+    public String getStrategyName() {
+        return strategyName;
     }
 
     @Override

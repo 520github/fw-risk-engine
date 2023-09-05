@@ -6,10 +6,28 @@ import java.util.List;
  * 默认规则集定义
  */
 public class DefaultRuleSet implements RuleSet {
+    /**
+     * 规则集名称
+     */
+    private String ruleSetName;
+    /**
+     * 规则集列表
+     */
     private List<Rule> ruleList;
 
     public static DefaultRuleSet create() {
         return new DefaultRuleSet();
+    }
+
+    @Override
+    public RuleSet setRuleSetName(String ruleSetName) {
+        this.ruleSetName = ruleSetName;
+        return this;
+    }
+
+    @Override
+    public String getRuleSetName() {
+        return ruleSetName;
     }
 
     @Override

@@ -4,7 +4,7 @@ package org.sunso.risk.expression;
  * 大于表达式
  */
 public class GreaterExpression extends AbstractExpression {
-    private String expressionName;
+    private String expressionName ;
 
     @Override
     public Expression setExpressionName(String expressionName) {

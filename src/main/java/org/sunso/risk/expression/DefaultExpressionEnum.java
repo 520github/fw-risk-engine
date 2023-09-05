@@ -5,7 +5,14 @@ package org.sunso.risk.expression;
  */
 public enum DefaultExpressionEnum {
     equal("equal", "等于", new EqualExpression()),
-    notEqual("notEqual", "不等于", new NotEqualExpression());
+    notEqual("notEqual", "不等于", new NotEqualExpression()),
+    less("less", "小于", new LessExpression()),
+    greater("greater", "大于", new GreaterExpression()),
+    lessAndEqual("lessAndEqual", "小于等于", new LessAndEqualExpression()),
+    greaterAndEqual("greaterAndEqual", "大于等于", new GreaterAndEqualExpression()),
+    contains("contains", "包含", new ContainsExpression()),
+    notContains("notContains", "不包含", new NotContainsExpression()),
+    ;
 
     String expressionKey;
     String expressionName;
@@ -26,6 +33,9 @@ public enum DefaultExpressionEnum {
     }
 
     public Expression getExpression() {
+        if (expression.getExpressionName() == null) {
+            expression.setExpressionName(expressionName);
+        }
         return expression;
     }
 

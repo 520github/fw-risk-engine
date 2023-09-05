@@ -8,6 +8,19 @@ import java.util.List;
 public interface Rule {
 
     /**
+     * 设置规则名称
+     * @param ruleName
+     * @return
+     */
+    Rule setRuleName(String ruleName);
+
+    /**
+     * 获取规则名称
+     * @return
+     */
+    String getRuleName();
+
+    /**
      * 设置命中策略
      * @param hitStrategy
      * @return

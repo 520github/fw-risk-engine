@@ -4,7 +4,7 @@ package org.sunso.risk.expression;
  * 大于等于表达式
  */
 public class GreaterAndEqualExpression extends AbstractExpression {
-    private String expressionName;
+    private String expressionName ;
 
     @Override
     public Expression setExpressionName(String expressionName) {

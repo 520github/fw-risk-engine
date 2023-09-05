@@ -26,8 +26,18 @@ public class RuleConditionRelationJoin extends AbstractRelationJoin {
         String targetValue = ruleCondition.getTargetValue();
         //根据表达式进行比较
         boolean compareResult = ruleCondition.getExpression().compare(targetValue, calValue);
-        System.out.println("calValue:" + calValue);
-        System.out.println("calValue:" + targetValue);
+        if (compareResult) {
+            StringBuffer sb = new StringBuffer();
+            sb.append("规则条件命中:");
+            sb.append(ruleCondition.getDataIndicator().getDataIndicatorName());
+            sb.append("(").append(ruleCondition.getDataIndicator().getDataIndicatorKey()).append(") ");
+            sb.append("---(").append(calValue).append(" ");
+            sb.append(ruleCondition.getExpression().getExpressionName());
+            sb.append(" ").append(targetValue).append(")").append(" = ").append(compareResult);
+            System.out.println(sb);
+        }
+        //System.out.println("calValue:" + calValue);
+        //System.out.println("targetValue:" + targetValue);
         //设置规则条件的计算结果
         ruleConditionExecuteResponse.addRuleCondition(ruleCondition, calValue, compareResult);
         return compareResult;
