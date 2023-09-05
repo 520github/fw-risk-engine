@@ -1,5 +1,8 @@
 package org.sunso.risk.relation;
 
+/**
+ * 规则条件之间and关系
+ */
 public class AndRelation implements Relation {
     private String relationKey;
 

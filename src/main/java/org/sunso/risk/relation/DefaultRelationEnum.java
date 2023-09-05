@@ -1,7 +1,11 @@
 package org.sunso.risk.relation;
 
+/**
+ * 默认关系枚举
+ */
 public enum DefaultRelationEnum {
-    and("and", "and", new AndRelation()), or("or", "or", new OrRelation()),;
+    and("and", "and", new AndRelation()),
+    or("or", "or", new OrRelation()),;
 
     String relationKey;
     String relationName;

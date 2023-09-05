@@ -3,9 +3,22 @@ package org.sunso.risk.response;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 规则策略执行结果
+ */
 public class StrategyExecuteResponse {
+    /**
+     * 命中规则数
+     */
     private int hitRuleNum;
+    /**
+     * 命中规则集数s
+     */
     private int hitRuleSetNum;
+
+    /**
+     * 规则集执行结果
+     */
     List<RuleSetExecuteResponse> ruleSetExecuteResponseList = new ArrayList<>();
 
     public static StrategyExecuteResponse create() {

@@ -1,5 +1,8 @@
 package org.sunso.risk.expression;
 
+/**
+ * 等于表达式
+ */
 public class EqualExpression implements Expression {
     private String expressionName;
 

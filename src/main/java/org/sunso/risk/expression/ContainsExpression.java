@@ -1,5 +1,8 @@
 package org.sunso.risk.expression;
 
+/**
+ * 包含表达式
+ */
 public class ContainsExpression implements Expression {
     private String expressionName;
 
@@ -16,6 +19,9 @@ public class ContainsExpression implements Expression {
 
     @Override
     public boolean compare(String targetValue, String dataIndicatorValue) {
-        return false;
+        if (targetValue == null || dataIndicatorValue == null) {
+            return false;
+        }
+        return dataIndicatorValue.contains(targetValue);
     }
 }

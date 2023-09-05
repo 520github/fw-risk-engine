@@ -3,9 +3,21 @@ package org.sunso.risk.response;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 规则集执行结果
+ */
 public class RuleSetExecuteResponse {
+    /**
+     * 规则集是否命中
+     */
     private boolean isHit;
+    /**
+     * 命中规则数
+     */
     private int hitRuleNum;
+    /**
+     * 规则执行结果列表
+     */
     private List<RuleExecuteResponse> ruleExecuteResponseList = new ArrayList<>();
 
     public static RuleSetExecuteResponse create() {

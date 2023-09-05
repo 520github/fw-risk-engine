@@ -1,6 +1,9 @@
 package org.sunso.risk.expression;
 
-public class GreaterExpression implements Expression {
+/**
+ * 大于表达式
+ */
+public class GreaterExpression extends AbstractExpression {
     private String expressionName;
 
     @Override
@@ -16,6 +19,9 @@ public class GreaterExpression implements Expression {
 
     @Override
     public boolean compare(String targetValue, String dataIndicatorValue) {
+        if (checkNullAndBigDecimalReturnFalse(targetValue, dataIndicatorValue)) {
+            return getBigDecimal(dataIndicatorValue).compareTo(getBigDecimal(targetValue)) > 0;
+        }
         return false;
     }
 }

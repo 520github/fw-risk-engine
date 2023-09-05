@@ -1,5 +1,8 @@
 package org.sunso.risk.expression;
 
+/**
+ * 默认表达式枚举
+ */
 public enum DefaultExpressionEnum {
     equal("equal", "等于", new EqualExpression()),
     notEqual("notEqual", "不等于", new NotEqualExpression());

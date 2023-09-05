@@ -1,9 +1,21 @@
 package org.sunso.risk.response;
 
+/**
+ * 规则执行结果
+ */
 public class RuleExecuteResponse {
+    /**
+     * 规则是否命中
+     */
     private boolean isHit;
+    /**
+     * 规则命中得分
+     */
     private int hitScore;
 
+    /**
+     * 规则执行详情
+     */
     private String ruleExecuteDetail;
 
     public static RuleExecuteResponse create() {

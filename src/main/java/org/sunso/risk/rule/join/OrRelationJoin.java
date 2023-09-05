@@ -4,6 +4,9 @@ import org.sunso.risk.context.Context;
 import org.sunso.risk.request.StrategyRequest;
 import org.sunso.risk.response.RuleConditionExecuteResponse;
 
+/**
+ * 两个规则条件之间or关系
+ */
 public class OrRelationJoin extends AbstractRelationJoin {
     private RelationJoin rj1;
     private RelationJoin rj2;

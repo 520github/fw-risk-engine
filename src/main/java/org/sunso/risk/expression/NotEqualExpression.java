@@ -1,5 +1,8 @@
 package org.sunso.risk.expression;
 
+/**
+ * 不等于表达式
+ */
 public class NotEqualExpression implements Expression {
     private String expressionName;
 

@@ -1,6 +1,11 @@
 package org.sunso.risk.expression;
 
-public class NotContainsExpression implements Expression {
+import java.util.List;
+
+/**
+ * 不包含表达式
+ */
+public class NotContainsExpression extends AbstractExpression {
     private String expressionName;
 
     @Override
@@ -16,6 +21,15 @@ public class NotContainsExpression implements Expression {
 
     @Override
     public boolean compare(String targetValue, String dataIndicatorValue) {
+        if (checkNullReturnFalse(targetValue, dataIndicatorValue)) {
+            String[] targetList = targetValue.split(",");
+            for(String target: targetList) {
+                if (target.equalsIgnoreCase(dataIndicatorValue)) {
+                    return false;
+                }
+            }
+            return true;
+        }
         return false;
     }
 }
