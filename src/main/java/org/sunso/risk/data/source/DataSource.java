@@ -5,6 +5,11 @@ package org.sunso.risk.data.source;
  */
 public interface DataSource {
 
+    /**
+     * 设置数据源key
+     * @param dataSourceKey
+     * @return
+     */
     DataSource setDataSourceKey(String dataSourceKey);
 
     String getDataSourceKey();

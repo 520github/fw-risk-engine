@@ -9,5 +9,12 @@ import org.sunso.risk.data.indicator.DataIndicator;
  * 如：可以从数据中心获取数据库， 或本地查库获取数据， 或从缓存读取数据
  */
 public interface DataIndicatorRoute {
+
+    /**
+     * 计算数据指标值
+     * @param dataIndicator
+     * @param context
+     * @return
+     */
     String calDataIndicator(DataIndicator dataIndicator, Context context);
 }

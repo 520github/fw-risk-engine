@@ -18,8 +18,10 @@ public class SimpleSequenceDispatcher implements Dispatcher {
     @Override
     public StrategyExecuteResponse dispatcher(StrategyRequest request) {
         StrategyExecuteResponse strategyExecuteResponse = StrategyExecuteResponse.create();
+        // 执行风控策略下的所有规则集
         for (RuleSet ruleSet : request.getStrategy().getRuleSetList()) {
             RuleSetExecuteResponse ruleSetExecuteResponse = RuleSetExecuteResponse.create();
+            //执行规则集下所有的规则
             for (Rule rule : ruleSet.getRuleList()) {
                 ruleSetExecuteResponse.addRuleExecuteResponse(request.getRuleHandler().handle(rule, request));
             }

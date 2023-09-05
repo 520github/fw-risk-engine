@@ -1,6 +1,5 @@
 package org.sunso.risk.rule.handler;
 
-import org.sunso.risk.context.Context;
 import org.sunso.risk.relation.AndRelation;
 import org.sunso.risk.relation.OrRelation;
 import org.sunso.risk.request.StrategyRequest;

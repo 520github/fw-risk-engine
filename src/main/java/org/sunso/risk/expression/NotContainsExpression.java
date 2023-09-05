@@ -1,6 +1,5 @@
 package org.sunso.risk.expression;
 
-import java.util.List;
 
 /**
  * 不包含表达式

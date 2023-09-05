@@ -9,14 +9,49 @@ import org.sunso.risk.rule.handler.RuleHandler;
 import org.sunso.risk.rule.handler.RuleHitHandler;
 import org.sunso.risk.strategy.Strategy;
 
+/**
+ * 风控策略请求参数
+ * @param <C>
+ */
 public class StrategyRequest<C extends Context> {
+    /**
+     * 业务上下文
+     */
     private C context;
+
+    /**
+     * 风控策略
+     */
     private Strategy strategy;
+
+    /**
+     * 规则集执行分发器
+     */
     private Dispatcher dispatcher;
+
+    /**
+     * 规则条件表达式工厂
+     */
     private ExpressionFactory expressionFactory;
+
+    /**
+     * 规则条件关系工厂
+     */
     private RelationFactory relationFactory;
+
+    /**
+     * 规则处理器
+     */
     private RuleHandler ruleHandler;
+
+    /**
+     * 规则命中处理器
+     */
     private RuleHitHandler ruleHitHandler;
+
+    /**
+     * 数据指标路由
+     */
     private DataIndicatorRoute dataIndicatorRoute;
 
     public static StrategyRequest create() {
