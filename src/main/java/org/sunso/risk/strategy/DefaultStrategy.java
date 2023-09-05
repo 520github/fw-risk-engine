@@ -4,6 +4,9 @@ import org.sunso.risk.rule.RuleSet;
 
 import java.util.List;
 
+/**
+ * 默认风控策略
+ */
 public class DefaultStrategy implements Strategy {
 
     private List<RuleSet> ruleSetList;

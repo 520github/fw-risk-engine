@@ -2,6 +2,9 @@ package org.sunso.risk.rule;
 
 import java.util.List;
 
+/**
+ * 默认规则定义
+ */
 public class DefaultRule implements Rule {
     private List<RuleCondition> ruleConditionList;
 

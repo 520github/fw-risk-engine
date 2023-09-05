@@ -2,6 +2,9 @@ package org.sunso.risk.data.indicator;
 
 import org.sunso.risk.data.source.DataSource;
 
+/**
+ * 数据指标默认实现
+ */
 public class DefaultDataIndicator implements DataIndicator {
     private String dataIndicatorKey;
     private String dataIndicatorName;

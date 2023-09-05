@@ -2,6 +2,9 @@ package org.sunso.risk.data.indicator;
 
 import org.sunso.risk.data.source.DataSource;
 
+/**
+ * 数据指标定义
+ */
 public interface DataIndicator {
 
     DataIndicator setDataIndicatorKey(String dataIndicatorKey);

@@ -15,8 +15,8 @@
 | RuleCondition        | 规则条件，由多个数据指标组成 | org.sunso.risk.rule.RuleCondition                |
 | DataIndicator         | 数据指标           | org.sunso.risk.data.indicator.DataIndicator      |
 | DataSource       | 数据源            | org.sunso.risk.data.source.DataSource            |
-| DataIndicator         | 数据指标路由器        | org.sunso.risk.data.indicator.DataIndicatorRoute |
-| DataSource       | 数据源路由器         | org.sunso.risk.data.source.DataSourceRoute       |
+| DataIndicatorRoute         | 数据指标路由器        | org.sunso.risk.data.indicator.DataIndicatorRoute |
+| DataSourceRoute       | 数据源路由器         | org.sunso.risk.data.source.DataSourceRoute       |
 | DataType   | 数据类型           | org.sunso.risk.data.type.DataType                |
 | Action | 规则命中动作         | org.sunso.risk.action.Action                     |
 | Expression        | 规则条件的表达式       | org.sunso.risk.expression.Expression                       |

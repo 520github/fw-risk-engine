@@ -1,7 +1,8 @@
 package org.sunso.risk.expression;
 
 public enum DefaultExpressionEnum {
-    equal("equal", "等于", new EqualExpression()), notEqual("notEqual", "不等于", new NotEqualExpression());
+    equal("equal", "等于", new EqualExpression()),
+    notEqual("notEqual", "不等于", new NotEqualExpression());
 
     String expressionKey;
     String expressionName;

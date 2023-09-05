@@ -7,6 +7,9 @@ import org.sunso.risk.response.StrategyExecuteResponse;
 import org.sunso.risk.rule.handler.DefaultRuleHandler;
 import org.sunso.risk.strategy.Strategy;
 
+/**
+ * 简单顺序执行器
+ */
 public class SimpleSequenceExecuter implements Executer {
 
     public static SimpleSequenceExecuter create() {

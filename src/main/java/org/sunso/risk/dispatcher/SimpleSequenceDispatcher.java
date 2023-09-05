@@ -6,6 +6,9 @@ import org.sunso.risk.response.StrategyExecuteResponse;
 import org.sunso.risk.rule.Rule;
 import org.sunso.risk.rule.RuleSet;
 
+/**
+ * 简单顺序执行分发器
+ */
 public class SimpleSequenceDispatcher implements Dispatcher {
 
     public static SimpleSequenceDispatcher create() {

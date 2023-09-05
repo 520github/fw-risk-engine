@@ -4,6 +4,10 @@ import org.sunso.risk.context.Context;
 import org.sunso.risk.data.indicator.DataIndicator;
 import org.sunso.risk.data.indicator.DataIndicatorRoute;
 
+/**
+ * mock数据指标路由
+ * 数据指标计算值直接返回： 数据指标key+"--value"
+ */
 public class MockDataIndicatorRoute implements DataIndicatorRoute {
 
     public static MockDataIndicatorRoute create() {

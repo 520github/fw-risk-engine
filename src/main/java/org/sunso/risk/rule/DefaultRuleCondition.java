@@ -4,6 +4,9 @@ import org.sunso.risk.data.indicator.DataIndicator;
 import org.sunso.risk.expression.Expression;
 import org.sunso.risk.relation.Relation;
 
+/**
+ * 默认规则条件定义
+ */
 public class DefaultRuleCondition implements RuleCondition {
     private DataIndicator dataIndicator;
     private Expression expression;
