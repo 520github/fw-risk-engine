@@ -2,6 +2,8 @@ package org.sunso.risk;
 
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
+import org.sunso.risk.action.RuleHitDeviceBlackListAction;
+import org.sunso.risk.action.RuleHitMobileBlackListAction;
 import org.sunso.risk.builder.*;
 import org.sunso.risk.context.DefaultContext;
 import org.sunso.risk.data.MockDataIndicatorRoute;
@@ -22,6 +24,7 @@ public class RiskStrategyBuilderTest extends AbstractTest {
                         .ruleSetName("黑名单规则集")
                         .rule(RuleBuilder.create() // 规则集1-- 规则1
                                 .ruleName("手机号是黑名单")
+                                .ruleHitAction(new RuleHitMobileBlackListAction())
                                 .ruleCondition(RuleConditionBuilder.create() // 规则集1-- 规则1 -- 规则条件1
                                         .expression(DefaultExpressionEnum.equal.getExpression())
                                         .relation(DefaultRelationEnum.and.getRelation())
@@ -53,6 +56,7 @@ public class RiskStrategyBuilderTest extends AbstractTest {
                                 .build())
                         .rule(RuleBuilder.create() // 规则集1-- 规则2
                                 .ruleName("设备是黑名单")
+                                .ruleHitAction(new RuleHitDeviceBlackListAction())
                                 .ruleCondition(RuleConditionBuilder.create() // 规则集1-- 规则2 -- 规则条件1
                                         .expression(DefaultExpressionEnum.equal.getExpression())
                                         .relation(DefaultRelationEnum.and.getRelation())

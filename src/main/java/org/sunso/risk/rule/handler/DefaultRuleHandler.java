@@ -32,6 +32,9 @@ public class DefaultRuleHandler implements RuleHandler {
         response.setHit(hit);
         //规则执行详情
         response.setRuleExecuteDetail(ruleConditionExecuteResponse.getRuleConditionResult());
+        if (hit && request.getRuleHitHandler() != null) {
+            request.getRuleHitHandler().handle(rule, request, response);
+        }
         return response;
     }
 

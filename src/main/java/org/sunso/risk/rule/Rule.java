@@ -1,5 +1,7 @@
 package org.sunso.risk.rule;
 
+import org.sunso.risk.action.RuleHitAction;
+
 import java.util.List;
 
 /**
@@ -39,4 +41,17 @@ public interface Rule {
      * @return
      */
     List<RuleCondition> getRuleConditionList();
+
+    /**
+     * 设置规则命中执行动作列表
+     * @param ruleHitActionList
+     * @return
+     */
+    Rule setRuleHitActionList(List<RuleHitAction> ruleHitActionList);
+
+    /**
+     * 获取规则命中执行动作列表
+     * @return
+     */
+    List<RuleHitAction> getRuleHitActionList();
 }

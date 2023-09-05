@@ -70,7 +70,7 @@ public class MyDataIndicatorRoute implements DataIndicatorRoute {
 
     private Map<String, String> innerDeviceDataSourceDataMap() {
         Map<String, String> dataMap = new HashMap<>();
-        dataMap.put("inner-device-register-day", "7");// 设备注册时间天数
+        dataMap.put("inner-device-register-day", "5");// 设备注册时间天数
         return dataMap;
     }
 
