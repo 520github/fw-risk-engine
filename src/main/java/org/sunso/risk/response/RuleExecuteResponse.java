@@ -1,9 +1,15 @@
 package org.sunso.risk.response;
 
+import org.sunso.risk.rule.Rule;
+
 /**
  * 规则执行结果
  */
 public class RuleExecuteResponse {
+    /**
+     * 规则名称
+     */
+    private String ruleName;
     /**
      * 规则是否命中
      */
@@ -18,8 +24,21 @@ public class RuleExecuteResponse {
      */
     private String ruleExecuteDetail;
 
-    public static RuleExecuteResponse create() {
-        return new RuleExecuteResponse();
+    public RuleExecuteResponse(Rule rule) {
+        this.ruleName = rule.getRuleName();
+    }
+
+    public static RuleExecuteResponse create(Rule rule) {
+        return new RuleExecuteResponse(rule);
+    }
+
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    public RuleExecuteResponse setRuleName(String ruleName) {
+        this.ruleName = ruleName;
+        return this;
     }
 
     public boolean isHit() {

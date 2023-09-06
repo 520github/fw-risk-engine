@@ -1,5 +1,7 @@
 package org.sunso.risk.response;
 
+import org.sunso.risk.rule.RuleSet;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,12 @@ import java.util.List;
  * 规则集执行结果
  */
 public class RuleSetExecuteResponse {
+
+    /**
+     * 规则集名称
+     */
+    private String ruleSetName;
+
     /**
      * 规则集是否命中
      */
@@ -20,8 +28,21 @@ public class RuleSetExecuteResponse {
      */
     private List<RuleExecuteResponse> ruleExecuteResponseList = new ArrayList<>();
 
-    public static RuleSetExecuteResponse create() {
-        return new RuleSetExecuteResponse();
+    public RuleSetExecuteResponse(RuleSet ruleSet) {
+        this.ruleSetName = ruleSet.getRuleSetName();
+    }
+
+    public static RuleSetExecuteResponse create(RuleSet ruleSet) {
+        return new RuleSetExecuteResponse(ruleSet);
+    }
+
+    public String getRuleSetName() {
+        return ruleSetName;
+    }
+
+    public RuleSetExecuteResponse setRuleSetName(String ruleSetName) {
+        this.ruleSetName = ruleSetName;
+        return this;
     }
 
     public boolean isHit() {

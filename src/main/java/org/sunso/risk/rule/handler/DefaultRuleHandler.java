@@ -24,7 +24,7 @@ public class DefaultRuleHandler implements RuleHandler {
     @Override
     public RuleExecuteResponse handle(Rule rule, StrategyRequest request) {
         //规则执行结果
-        RuleExecuteResponse response = RuleExecuteResponse.create();
+        RuleExecuteResponse response = RuleExecuteResponse.create(rule);
         //规则条件执行结果
         RuleConditionExecuteResponse ruleConditionExecuteResponse = RuleConditionExecuteResponse.create();
         //执行规则集下所有的规则条件，返回当前规则是否命中结果

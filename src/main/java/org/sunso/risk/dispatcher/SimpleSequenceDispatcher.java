@@ -20,7 +20,7 @@ public class SimpleSequenceDispatcher implements Dispatcher {
         StrategyExecuteResponse strategyExecuteResponse = StrategyExecuteResponse.create();
         // 执行风控策略下的所有规则集
         for (RuleSet ruleSet : request.getStrategy().getRuleSetList()) {
-            RuleSetExecuteResponse ruleSetExecuteResponse = RuleSetExecuteResponse.create();
+            RuleSetExecuteResponse ruleSetExecuteResponse = RuleSetExecuteResponse.create(ruleSet);
             //执行规则集下所有的规则
             for (Rule rule : ruleSet.getRuleList()) {
                 ruleSetExecuteResponse.addRuleExecuteResponse(request.getRuleHandler().handle(rule, request));
