@@ -26,6 +26,9 @@ public enum DefaultRelationEnum {
     }
 
     public Relation getRelation() {
+        if (relation.getRelationKey() == null) {
+            relation.setRelationKey(relationKey);
+        }
         return relation;
     }
 

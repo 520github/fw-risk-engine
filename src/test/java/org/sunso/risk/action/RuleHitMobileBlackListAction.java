@@ -4,9 +4,9 @@ import org.sunso.risk.request.StrategyRequest;
 import org.sunso.risk.response.RuleExecuteResponse;
 import org.sunso.risk.rule.Rule;
 
-public class RuleHitMobileBlackListAction implements RuleHitAction {
+public class RuleHitMobileBlackListAction extends AbstractRuleHitAction  {
     @Override
     public void doAction(Rule rule, StrategyRequest request, RuleExecuteResponse response) {
-        System.out.println("规则["+rule.getRuleName()+"]已命中，把手机号加入到黑名单");
+        System.out.println("规则["+rule.getRuleName()+"]已命中，把手机号["+getMobile(request)+"]加入到黑名单");
     }
 }

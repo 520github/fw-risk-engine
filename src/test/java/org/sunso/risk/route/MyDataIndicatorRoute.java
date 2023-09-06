@@ -56,9 +56,9 @@ public class MyDataIndicatorRoute implements DataIndicatorRoute {
 
     private Map<String, String> innerBlacklistDataSourceDataMap() {
         Map<String, String> dataMap = new HashMap<>();
-        dataMap.put("inner-blacklist-mobile", "yes");// 内部手机号黑名单
-        dataMap.put("inner-blacklist-device", "yes");// 内部设备黑名单
-        dataMap.put("inner-blacklist-idCard", "yes");// 内部身份证号黑名单
+        dataMap.put("inner-blacklist-mobile", "no");// 内部手机号黑名单
+        dataMap.put("inner-blacklist-device", "no");// 内部设备黑名单
+        dataMap.put("inner-blacklist-idCard", "no");// 内部身份证号黑名单
         return dataMap;
     }
 

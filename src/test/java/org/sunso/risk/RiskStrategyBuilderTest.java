@@ -5,8 +5,7 @@ import org.junit.Test;
 import org.sunso.risk.action.RuleHitDeviceBlackListAction;
 import org.sunso.risk.action.RuleHitMobileBlackListAction;
 import org.sunso.risk.builder.*;
-import org.sunso.risk.context.DefaultContext;
-import org.sunso.risk.data.MockDataIndicatorRoute;
+import org.sunso.risk.context.BizContext;
 import org.sunso.risk.executer.SimpleSequenceExecuter;
 import org.sunso.risk.expression.DefaultExpressionEnum;
 import org.sunso.risk.relation.DefaultRelationEnum;
@@ -14,6 +13,9 @@ import org.sunso.risk.request.StrategyRequest;
 import org.sunso.risk.response.StrategyExecuteResponse;
 import org.sunso.risk.route.MyDataIndicatorRoute;
 
+/**
+ * 基于Builder构建方式，测试风控策略流程
+ */
 public class RiskStrategyBuilderTest extends AbstractTest {
 
     @Test
@@ -24,7 +26,8 @@ public class RiskStrategyBuilderTest extends AbstractTest {
                         .ruleSetName("黑名单规则集")
                         .rule(RuleBuilder.create() // 规则集1-- 规则1
                                 .ruleName("手机号是黑名单")
-                                .ruleHitAction(new RuleHitMobileBlackListAction())
+                                .ruleHitAction(new RuleHitMobileBlackListAction()) // 规则命中后执行动作
+                                .ruleHitAction(new RuleHitDeviceBlackListAction()) // 规则命中后执行动作
                                 .ruleCondition(RuleConditionBuilder.create() // 规则集1-- 规则1 -- 规则条件1
                                         .expression(DefaultExpressionEnum.equal.getExpression())
                                         .relation(DefaultRelationEnum.and.getRelation())
@@ -184,7 +187,8 @@ public class RiskStrategyBuilderTest extends AbstractTest {
 
         StrategyRequest strategyRequest = StrategyRequestBuilder.create()
                 .strategy(strategyBuilder.build())
-                .context(DefaultContext.create())
+                .context(BizContext.create()
+                        .setMobile("1248983765").setDeviceId("o8djf300922jfkk2oi73jd"))
                 .dataIndicatorRoute(MyDataIndicatorRoute.create())
                 .build();
 

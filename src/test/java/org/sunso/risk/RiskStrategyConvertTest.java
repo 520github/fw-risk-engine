@@ -24,9 +24,9 @@ import org.sunso.risk.rule.handler.RuleHitHandler;
 import org.sunso.risk.strategy.Strategy;
 
 /**
- * 风控策略单元测试
+ * 基于convert转化方式，测试风控策略流程
  */
-public class RiskStrategyTest extends AbstractTest {
+public class RiskStrategyConvertTest extends AbstractTest {
 
     @Test
     public void riskStrategyTest() {
