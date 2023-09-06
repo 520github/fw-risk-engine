@@ -220,3 +220,52 @@
 
         System.out.println(JSON.toJSONString(response));
 ~~~
+
+#### 风控策略执行返回结果
+~~~
+{
+	"hitRuleNum": 3,
+	"hitRuleSetNum": 3,
+	"ruleSetExecuteResponseList": [{
+		"hit": true,
+		"hitRuleNum": 1,
+		"ruleExecuteResponseList": [{
+			"hit": true,
+			"hitScore": 0,
+			"ruleExecuteDetail": "and 内部系统-手机号黑名单 [no 等于 yes] = false;or 外部系统-手机号黑名单 [yes 等于 yes] = true;",
+			"ruleName": "手机号是黑名单"
+		}, {
+			"hit": false,
+			"hitScore": 0,
+			"ruleExecuteDetail": "and 内部系统-设备是黑名单 [no 等于 yes] = false;",
+			"ruleName": "设备是黑名单"
+		}, {
+			"hit": false,
+			"hitScore": 0,
+			"ruleExecuteDetail": "and 内部系统-身份证是黑名单 [no 等于 yes] = false;",
+			"ruleName": "身份证号是黑名单"
+		}],
+		"ruleSetName": "黑名单规则集"
+	}, {
+		"hit": true,
+		"hitRuleNum": 1,
+		"ruleExecuteResponseList": [{
+			"hit": true,
+			"hitScore": 0,
+			"ruleExecuteDetail": "and 通讯录数量 [4 小于 10] = true;",
+			"ruleName": "通讯录过少或过新"
+		}],
+		"ruleSetName": "通讯录规则集"
+	}, {
+		"hit": true,
+		"hitRuleNum": 1,
+		"ruleExecuteResponseList": [{
+			"hit": true,
+			"hitScore": 0,
+			"ruleExecuteDetail": "and 近7天借口次数 [4 大于 3] = true;",
+			"ruleName": "近7天借款次数不超过3次"
+		}],
+		"ruleSetName": "多头规则集"
+	}]
+}
+~~~
