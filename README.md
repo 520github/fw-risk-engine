@@ -224,7 +224,7 @@
 #### 风控策略执行返回结果
 ~~~
 {
-    "strategyName": "小额现金贷-复贷用户风控策略", //风控策略名称
+        "strategyName": "小额现金贷-复贷用户风控策略", //风控策略名称
 	"hitRuleNum": 3,  //该策略总共命中规则数
 	"hitRuleSetNum": 3, //该策略总共命中规则集数
 	"ruleSetExecuteResponseList": [{
