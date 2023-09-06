@@ -20,24 +20,31 @@ public class RiskStrategyBuilderTest extends AbstractTest {
 
     @Test
     public void riskStrategyBuilderTest() {
+        //一级                                   风控策略(整体层级结构)
+        //二级                         规则集1                         规则集2                规则集3
+        //三级       规则11             规则12      规则13         规则21     规则22            规则31
+        //四级 规则条件111 规则条件112    规则条件121                规则条件211                  规则条件311
+        //五级 数据指标111 数据指标112    数据指标121                数据指标211                  数据指标311
+        //六级 数据源111   数据源112      数据源121                 数据源211                    数据源311
+
         StrategyBuilder strategyBuilder = StrategyBuilder.create()
                 .strategyName("小额现金贷-复贷用户风控策略")
                 .ruleSet(RuleSetBuilder.create() // 规则集1
                         .ruleSetName("黑名单规则集")
                         .rule(RuleBuilder.create() // 规则集1-- 规则1
-                                .ruleName("手机号是黑名单")
+                                .ruleName("手机号是黑名单") // 规则名称
                                 .ruleHitAction(new RuleHitMobileBlackListAction()) // 规则命中后执行动作
                                 .ruleHitAction(new RuleHitDeviceBlackListAction()) // 规则命中后执行动作
                                 .ruleCondition(RuleConditionBuilder.create() // 规则集1-- 规则1 -- 规则条件1
-                                        .expression(DefaultExpressionEnum.equal.getExpression())
-                                        .relation(DefaultRelationEnum.and.getRelation())
-                                        .targetValue("yes")
+                                        .expression(DefaultExpressionEnum.equal.getExpression()) // 比较表达式为等于
+                                        .relation(DefaultRelationEnum.and.getRelation()) // and 关系
+                                        .targetValue("yes") // 比较目标值
                                         .dataIndicator(DataIndicatorBuilder.create()
-                                                .dataIndicatorName("内部系统-手机号黑名单")
-                                                .dataIndicatorKey("inner-blacklist-mobile")
+                                                .dataIndicatorName("内部系统-手机号黑名单")  // 数据指标名称
+                                                .dataIndicatorKey("inner-blacklist-mobile") // 数据指标key
                                                 .dataIndicatorInvokeKey("inner-blacklist-mobile-method")
                                                 .dataSource(DataSourceBuilder.create()
-                                                        .dataSourceKey("inner-blacklist")
+                                                        .dataSourceKey("inner-blacklist") // 数据源key
                                                         .build())
                                                 .build())
                                         .build())
@@ -186,14 +193,14 @@ public class RiskStrategyBuilderTest extends AbstractTest {
                 ;
 
         StrategyRequest strategyRequest = StrategyRequestBuilder.create()
-                .strategy(strategyBuilder.build())
-                .context(BizContext.create()
+                .strategy(strategyBuilder.build()) // 配置风控策略
+                .context(BizContext.create() // 配置业务上下文涉及的数据
                         .setMobile("1248983765").setDeviceId("o8djf300922jfkk2oi73jd"))
-                .dataIndicatorRoute(MyDataIndicatorRoute.create())
+                .dataIndicatorRoute(MyDataIndicatorRoute.create()) //配置数据指标路由
                 .build();
 
         StrategyExecuteResponse response = SimpleSequenceExecuter.create()
-                .execute(strategyRequest);
+                .execute(strategyRequest); // 执行风控策略
 
         System.out.println(JSON.toJSONString(response));
     }
