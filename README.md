@@ -224,13 +224,14 @@
 #### 风控策略执行返回结果
 ~~~
 {
-	"hitRuleNum": 3,
-	"hitRuleSetNum": 3,
+    "strategyName": "小额现金贷-复贷用户风控策略", //风控策略名称
+	"hitRuleNum": 3,  //该策略总共命中规则数
+	"hitRuleSetNum": 3, //该策略总共命中规则集数
 	"ruleSetExecuteResponseList": [{
-		"hit": true,
-		"hitRuleNum": 1,
+		"hit": true,  // 规则集是否命中
+		"hitRuleNum": 1, // 规则集下命中的规则数
 		"ruleExecuteResponseList": [{
-			"hit": true,
+			"hit": true,  // 规则是否命中
 			"hitScore": 0,
 			"ruleExecuteDetail": "and 内部系统-手机号黑名单 [no 等于 yes] = false;or 外部系统-手机号黑名单 [yes 等于 yes] = true;",
 			"ruleName": "手机号是黑名单"

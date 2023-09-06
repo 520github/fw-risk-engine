@@ -1,5 +1,7 @@
 package org.sunso.risk.response;
 
+import org.sunso.risk.strategy.Strategy;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import java.util.List;
  * 规则策略执行结果
  */
 public class StrategyExecuteResponse {
+    private String strategyName;
     /**
      * 命中规则数
      */
@@ -21,8 +24,21 @@ public class StrategyExecuteResponse {
      */
     List<RuleSetExecuteResponse> ruleSetExecuteResponseList = new ArrayList<>();
 
-    public static StrategyExecuteResponse create() {
-        return new StrategyExecuteResponse();
+    public StrategyExecuteResponse(Strategy strategy) {
+        this.strategyName = strategy.getStrategyName();
+    }
+
+    public static StrategyExecuteResponse create(Strategy strategy) {
+        return new StrategyExecuteResponse(strategy);
+    }
+
+    public String getStrategyName() {
+        return strategyName;
+    }
+
+    public StrategyExecuteResponse setStrategyName(String strategyName) {
+        this.strategyName = strategyName;
+        return this;
     }
 
     public int getHitRuleNum() {
